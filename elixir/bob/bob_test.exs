@@ -26,18 +26,18 @@ defmodule TeenagerTest do
   end
 
   test "shouting with special characters" do
-    # assert Teenager.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!") == "Woah, chill out!"
+    assert Teenager.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!") == "Woah, chill out!"
   end
 
   test "shouting with no exclamation mark" do
-    # assert Teenager.hey("I HATE YOU") == "Woah, chill out!"
+    assert Teenager.hey("I HATE YOU") == "Woah, chill out!"
   end
 
   test "statement containing question mark" do
-    # assert Teenager.hey("Ending with ? means a question.") == "Whatever."
+    assert Teenager.hey("Ending with ? means a question.") == "Whatever."
   end
 
   test "silence" do
-    # assert Teenager.hey("") == "Fine. Be that way."
+    assert Teenager.hey("") == "Fine. Be that way."
   end
 end

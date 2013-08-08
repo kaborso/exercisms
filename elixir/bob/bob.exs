@@ -1,39 +1,23 @@
 defmodule Teenager do
-  def asky?(message) do
-    case message do
-      "Does this cryogenic chamber make me look fat?" -> true
-      _ -> false
+  def hey(message) do
+    cond do
+      is_reticent?(message) -> "Fine. Be that way."
+      is_shouting?(message) -> "Woah, chill out!"
+      is_question?(message) -> "Sure."
+      true                  -> "Whatever."
     end
   end
 
-  defp statement?(message) do
-    case message do
-      "Tom-ay-to, tom-aaaah-to." -> true
-      "Let's go make out behind the gym!" -> true
-      _ -> false
-    end
+  defp is_reticent?(message) do
+    "" == message
   end
 
-  defp shouty?(message) do
-    case message do
-      "WATCH OUT!" -> true
-      "1, 2, 3 GO!" -> true
-      _ -> false
-    end
+  defp is_shouting?(message) do
+    String.upcase(message) == message
   end
 
-  def hey(message) when statement?(message) do
-   "Whatever."
+  defp is_question?(message) do
+    Regex.match?(%r/\?$/, message)
   end
-
-  def hey(message) when shouty?(message) do
-    "Woah, chill out!"
-  end
-
-  def hey(message) when asky?(message) do
-    "Sure."
-  end
-
-
 end
 
