@@ -9,7 +9,7 @@ defmodule Teenager do
   end
 
   defp reticent?(message) do
-    "" == message
+    message == nil || message == ""
   end
 
   defp shouting?(message) do
