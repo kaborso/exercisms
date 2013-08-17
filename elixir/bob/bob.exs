@@ -17,7 +17,7 @@ defmodule Teenager do
   end
 
   defp is_question?(message) do
-    Regex.match?(%r/\?$/, message)
+    String.last(message) == "?"
   end
 end
 
