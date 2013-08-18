@@ -8,7 +8,7 @@ defmodule Teenager do
     end
   end
 
-  defp reticent?(message) when message == nil do
+  defp reticent?(nil) do
     true
   end
 
