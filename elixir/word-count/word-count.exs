@@ -4,6 +4,18 @@ defmodule Words do
   end
 
   def count(list) when is_list(list) do
-    List.foldl list, HashDict.new, fn value, acc -> Dict.put(acc, value, 1) end
+    List.foldl list, HashDict.new, &count/2
+  end
+
+  def count(entry, dict) do
+    Dict.put(dict, entry, count(dict[entry]))
+  end
+
+  def count(nil) do
+    1
+  end
+
+  def count(num) do
+    num + 1
   end
 end
