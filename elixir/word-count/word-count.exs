@@ -30,7 +30,7 @@ defmodule Words do
         word = String.downcase part
         new_words = words ++ [word]
       end
-      new_words
+      new_words || words
     end
   end
 end
